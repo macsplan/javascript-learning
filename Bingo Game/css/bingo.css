@@ -9,6 +9,9 @@ body {
   padding: 1em;
   border-radius: 10px;
 }
+.buttonRow {
+  text-align: center;
+}
 .pastNumbers {
   font-size: 25px;
   background-color: white;
@@ -44,6 +47,7 @@ body {
 
 .reset {
   background-color: #CD539C;
+  margin: 0;
 }
 .reset:hover, .reset:focus {
   background-color: #a4427c;
@@ -107,7 +111,81 @@ body {
   max-width: 55.55556rem;
   right: 0;
   width: 80%;
+  text-align: center;
+  padding: 2em;
 }
+
+.reveal-modal img {
+  width: 250px;
+}
+
+.close-reveal-modal {
+  float: right;
+  font-size: 4em;
+  color: grey;
+  position: relative;
+  top: -0.8em;
+  left: 0.25em;
+}
+
+@media screen and (max-width: 40em) {
+  .reveal-modal img {
+    width: 170px;
+  }
+  .reveal-modal h2 {
+    font-size: 2em;
+    margin-top: 0.5em;
+  }
+  .headSquare {
+    font-size: 40px;
+  }
+  .cardSquare {
+    min-height: 50px;
+    font-size: 26px;
+    vertical-align: middle;
+    padding: 1%;
+  }
+  .bingodraw {
+    margin: 0 !important;
+    margin-top: 15px !important;
+    padding: 0.5em;
+  }
+  #displayNumber {
+    font-size: 70px;
+  }
+  #cardContainer {
+    margin-top: 15px;
+    margin-left: 0;
+  }
+  .pastNumbers {
+    font-size: 20px;
+    margin: 15px 0.5em;
+  }
+}
+
+@media screen and (max-width: 35em) {
+  .cardSquare {
+    min-height: 28px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 28em) {
+  .small-4, .small-8 {
+    width: 100%;
+  }
+  .button {
+    width: inherit;
+    padding: 0.85em 0.7em;
+  }
+  .reset {
+    margin-bottom: 1em;
+  }
+  #displayNumber {
+    font-size: 50px;
+  }
+}
+
 @media screen and (min-width: 64em) {
   .pastNumbers {
     margin: 1em 0.6em 1em 0.8em;

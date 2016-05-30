@@ -19,7 +19,8 @@ var winners = [
     ['square4','square9','square13','square18','square23'],
     ['square5','square10','square14','square19','square24'],
     ['square1','square7','free','square18','square24'],
-    ['square5','square9','free','square16','square20']
+    ['square5','square9','free','square16','square20'],
+    ['square1','square5','free','square20','square24']
 ];
 
 // possible winning combinations

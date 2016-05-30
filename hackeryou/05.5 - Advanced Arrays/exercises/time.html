@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Times</title>
+</head>
+<body>
+  <script>
+    // here is a list of timecodes from some youtube videos:
+    var times =  ["5:17", "8:22", "3:34", "5:23", "7:12", "7:24", "6:46", "4:45", "4:40", "7:58", "11:51", "9:13", "5:50", "5:52", "5:49", "8:57", "11:29", "3:07", "5:59", "3:31"];
+
+    var secondsArray = [];
+
+    var convertTime = times.forEach(function(time) {
+      var t = time.split(":");
+      var m = parseFloat(t[0] * 60);
+      var s = parseFloat(t[1]);
+      var timeInSec = m + s;
+      console.log(timeInSec)
+      secondsArray.push(timeInSec);
+    });
+
+    var finalTally = secondsArray.reduce(function(tally, currentValue) {
+      return tally + currentValue;
+    },0);
+
+    var hours = Math.floor(finalTally / 3600);
+    time = finalTally - hours * 3600;
+    var finalMinutes = Math.floor(time / 60);
+    var finalSeconds = time - finalMinutes * 60;
+
+
+    console.log(`${hours} hrs ${finalMinutes} and ${finalSeconds} seconds`)
+5
+    // using reduce, calculate to total hours, minutes and seconds
+
+    // Tip: You'll have to _split_ the strings into minutes and seconds, and then tally the total minutes
+  </script>
+</body>
+</html>

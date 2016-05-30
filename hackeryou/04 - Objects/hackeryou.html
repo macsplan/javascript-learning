@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var hackerYou = {
+      coursesOffered: {
+        javscript: 2,
+        seo: 2,
+        uXDesign: 2,
+        webDevelopment: 2
+      },
+      ageOfSchool: 5,
+      instructorName: {
+        webDevelopment: "Ryan Christiani",
+        javaScript: "Wes Bos",
+        uXDesign: "Linda Nakanishi",
+        rubyOnRails: "Ryan Brunner"
+      },
+    }
+
+    var student = {
+      id: 1,
+      name: "Homer Simpson",
+      age: 15,
+      GPA: 1.4,
+      school: "Springfield High"
+    }
+
+    var sentence = `The student ${student.name} (ID: $) is ${student.age} years old. He has a GPA of ${student.GPA} and is from ${student.school}`;
+    console.log(sentence)
+
+
+    var clothing = {
+      socks: 34,
+      shoes: 2,
+      pants: 3
+    }
+
+
+    for (item in clothing) {
+      console.log(`I have ${clothing[item]} ${item}`)
+    }
+
+  </script>
+</body>
+</html>

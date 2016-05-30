@@ -1,0 +1,58 @@
+body {
+  font-family: 'AnitaSemisquareNormal';
+  font-weight: normal;
+  font-style: normal;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  background-image: url("https://dl.dropboxusercontent.com/u/26549103/FreeCodeCamp%20Files/planet-earth-in-space-planet-earth-space-1920x1440.jpg");
+  background-size: cover;
+  background-position: top center;
+}
+body h1, body h2 {
+  font-family: inherit;
+  color: inherit;
+  font-size: 3em;
+  padding: 1em;
+}
+body h2, body .sessionValue, body .breakValue {
+  font-size: 1.5em;
+}
+
+#timer {
+  display: block;
+  position: relative;
+  border-radius: 30%;
+  max-width: 450px;
+  min-height: 250px;
+  height: auto;
+  font-size: 5rem;
+  margin: 5% auto;
+  border: 2px solid #00CAFB;
+  background-color: transparent;
+  text-align: center;
+  padding: 8% 4%;
+}
+#timer #timerName {
+  font-size: 0.5em;
+}
+#timer #clock {
+  padding-top: 5%;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid #00CAFB;
+  border-radius: 1em;
+  margin: 0.5em;
+  padding: 0.5em 1.5em;
+  text-transform: uppercase;
+  height: 3.5em;
+}
+button:hover {
+  background-color: #168CDB;
+  border: 1px solid #fff;
+}
+button span {
+  font-size: 1.5em;
+}

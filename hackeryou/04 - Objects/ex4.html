@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>  ex4</title>
+</head>
+<body>
+
+  <script>
+
+  // create two person objects with their name (string), age (number), gender (string), canadian (boolean) and a nested object containing the number of years worked at 4 different jobs
+
+
+  var people = {
+    person1: {
+      name: "Michelle",
+      age: 35,
+      gender: "Female",
+      canadian: true,
+      yearsWorked: {
+        uxgent: 2,
+        homeSav: 2,
+        stanleyBragg: 2,
+        atkins: 5,
+        colbayns: 1.6,
+      }
+    },
+    person2: {
+      name: "John",
+      age: 42,
+      gender: "Male",
+      canadian: true,
+      yearsWorked: {
+        uxgent: 3,
+        homeSav: 1.6,
+        bNotions: 0.4,
+        Redington: 4,
+        moveme: 3,
+        WSP: 7,
+        reuters: 1,
+      }
+    }
+  };
+
+  // create a variable called hello and set it to a string such as "Say hello to wes", but using the name stored above.
+  // then log it
+
+  var sayHello = `Say Hello to ${people.person1.name} & ${people.person2.name}`
+  console.log(sayHello);
+
+  // create a variable called howOld and set it to "Wes is 43 years old". That is 301 in dog years!""
+
+  function dogYearsCalc(val) {
+    return val * 7
+  }
+
+  var howOld = `${people.person1.name} is ${people.person1.age} thats ${dogYearsCalc(people.person1.age)} in dog years`
+  console.log(howOld)
+
+  // create a new varaible and store something like "Wes is a male and it is true that he/she is Canadian"
+
+  var phrase = `${people.person2.name} is a ${people.person2.gender} and it is ${people.person2.canadian} that he/she is a canadian`
+
+  console.log(phrase)
+  // Re do the last question, but use the proper he or she
+  // if the gender is set to other, or anything else, it should output "they are"
+
+  var sex = function(person) {
+    if (person.gender === "Male" ) {
+      return "He";
+    } else {
+      return "She";
+    }
+  }
+
+  var phrase2 = `${people.person2.name} is a ${people.person2.gender} and it is ${people.person2.canadian} that ${sex(people.person2)} is a Canadian`
+
+  console.log(phrase2)
+
+  // loop through the work experience, for each entry output something like "Wes worked at tims for 4 years"
+  // keep a tally of the worked years
+
+  var totalYear = 0;
+  function workHistory(person) {
+    var jobs = Object.keys(person.yearsWorked);
+    for (job in jobs) {
+      console.log(`${person.name} worked at ${jobs[job]} for ${person.yearsWorked[jobs[job]]} ${person.yearsWorked[jobs[job]] === 1 ? 'year' : 'years'}`)
+      totalYear = totalYear + person.yearsWorked[jobs[job]];
+    }
+    console.log(`${person.name} has worked ${totalYear} years thats ${dogYearsCalc(totalYear)} in dog years`)
+  }
+
+
+
+  workHistory(people.person2)
+
+  // Log the total number of years, turn that into months and dog years as well.
+  // it should look similar to:
+  //  Wes has worked for a total of 10 years. That is 120 months or 70dog years!!
+
+  </script>
+
+</body>
+</html>

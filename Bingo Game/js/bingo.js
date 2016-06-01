@@ -46,17 +46,17 @@ function loadNumber() {
     // If not push number to array
     numberGenerate.push(newNumber);
   }
-}
+};
 
 // Push all numbers to Squares
 
 // renderBingoCard
 function addNumber() {
   for (var i = 0; i<25; i++) {
-    $("#square"+i).html(numberGenerate[i]);
-    $("#square"+i).addClass("value"+numberGenerate[i]);
+    $("#square"+i).html(numberGenerate[i])
+      .addClass("value"+numberGenerate[i]);
   }
-}
+};
 
 
 // generateBingoMachine
@@ -69,14 +69,14 @@ function pickNumbers() {
     }
     pickedNumbers.push(newNumber);
   }
-}
+};
 
 // renderBingoNumbers
 function showNumber() {
   $("#displayNumber").html(pickedNumbers[counter]);
   if (counter < 1) {
     $(".pastNumbers").empty()
-    $(".pastNumbers").prepend(pickedNumbers[counter]);
+      .prepend(pickedNumbers[counter]);
   } else {
     $(".pastNumbers").prepend(pickedNumbers[counter] + ", ");
   }
@@ -85,15 +85,15 @@ function showNumber() {
   } else {
     counter++;
   }
-}
+};
 
 
-$( document ).ready(function() {
+$(document).ready(function() {
+
   // setup
   loadNumber();
   pickNumbers();
   addNumber();
-
 
   // play
   $( ".playbutton" ).on( "click", function() {
@@ -139,7 +139,6 @@ $( document ).ready(function() {
     // Push clicked object ID to 'selected' array
 
     selected.push($(this).attr('id'));
-    console.log(selected)
 
 
     // Compare winners array to selected array for matches
@@ -152,11 +151,16 @@ $( document ).ready(function() {
             }
         }
 
-        // If all 5 winner cells exist in selected array alert success message
+        // If all 5 winner cells exist in selected reveal modal success message
+
         if(cellExists == 5) {
             var popup = new Foundation.Reveal($('#myModal'));
             popup.open();
+
+            // stop interval
             clearInterval(setTime)
+
+            // close modals
             $('.close-reveal-modal').on("click", function() {
               popup.close();
             });

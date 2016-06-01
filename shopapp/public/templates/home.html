@@ -38,10 +38,10 @@
 <section class="product-view" role="product-view">
 	<div class="content-wrapper">
 		<div class="row">
-			<!-- TODO #3: SHOW PRODUCTS -->
+			<a href="#/products/{{product.sku}}"
 			<div class="col-xs-12 col-sm-3"
 				 ng-repeat="product in shop.products | filter: search">
-				<div id="product-card" class="product-card">
+				<div id="product-card" class="product-card" ng-click="shop.getProduct('id')">
 					<div class="product-buy">
 						<div class="table-view">
 							<div class="table-cell" ng-click="cart.addItem(product.id, product.name, product.price, 1, product.quantityInStock)">
@@ -50,7 +50,7 @@
 						</div>
 					</div>
 					<!-- SET PRODUCT IMAGE -->
-					<div class="product-img" style="background:url('{{product.thumb}}');background-size:cover;background-position:center center">
+					<div class="product-img"  style="background:url('{{product.thumb}}');background-size:cover;background-position:center center">
 					</div>
 
 					<div class="product-info">

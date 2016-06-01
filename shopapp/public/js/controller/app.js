@@ -20,11 +20,15 @@ shopApp.controller('shopAppController', function($routeParams, DataService){
 
 	// TODO: Define the controller function, getProduct that returns a specific product object for an id
 	self.getProduct = function(id) {
-		self.products = allProducts[$routeParams.id];
+		allProducts.forEach(function(item) {
+			if (item.id == id){
+				return id
+			}
+		});
+		console.log(allProducts.id);
 	};
 
 	// TODO: Define the controller function, getCategory that returns all products in a particular category
-
 	self.getCategory = function(category_name) {
 		var selected = [];
 		if (!category_name) {
@@ -40,5 +44,6 @@ shopApp.controller('shopAppController', function($routeParams, DataService){
 		self.products = selected;
 
 	}
+
 
 });
